@@ -2,6 +2,8 @@
 
 <p><h4>[*]Validador de Cartões de Credito gerados.</h4></p>
 
+<img src="https://i.ibb.co/7pKShq8/20201102-042444.jpg" />
+
 <p><h4>[+]Features:</h4>
 *Consulta por lista: forneça a lista com quantas CCs quiser (pode ocorrer IP Block apos 4 tentativas sem sucesso);</br>
 *Geração de pessoas aleatorias (atraves de API), resultando em nenhuma request como a anterior;</br>
