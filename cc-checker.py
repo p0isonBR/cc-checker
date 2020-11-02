@@ -38,12 +38,12 @@ print(f"""{C}
                        ///////+++++++++++++//////
                        
                        
-      ██████╗  ██████╗ ██╗███████╗ ██████╗ ███╗   ██╗██████╗ ██████╗ 
-      ██╔══██╗██╔═══██╗██║██╔════╝██╔═══██╗████╗  ██║██╔══██╗██╔══██╗
-      ██████╔╝██║   ██║██║███████╗██║   ██║██╔██╗ ██║██████╔╝██████╔╝
-      ██╔═══╝ ██║   ██║██║╚════██║██║   ██║██║╚██╗██║██╔══██╗██╔══██╗
-      ██║     ╚██████╔╝██║███████║╚██████╔╝██║ ╚████║██████╔╝██║  ██║
-      ╚═╝      ╚═════╝ ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚═════╝ ╚═╝  ╚═╝
+     ██████╗  ██████╗ ██╗███████╗ ██████╗ ███╗   ██╗██████╗ ██████╗
+     ██╔══██╗██╔═══██╗██║██╔════╝██╔═══██╗████╗  ██║██╔══██╗██╔══██╗
+     ██████╔╝██║   ██║██║███████╗██║   ██║██╔██╗ ██║██████╔╝██████╔╝
+     ██╔═══╝ ██║   ██║██║╚════██║██║   ██║██║╚██╗██║██╔══██╗██╔══██╗
+     ██║     ╚██████╔╝██║███████║╚██████╔╝██║ ╚████║██████╔╝██║  ██║
+     ╚═╝      ╚═════╝ ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚═════╝ ╚═╝  ╚═╝
        {RT}{B}*t.me/p0isonBR*{RT}""")
 
 time.sleep(3); os.system('clear')
@@ -71,14 +71,14 @@ try:
         else:
             tipo2="D"
             
-        print("""[+]Consultando dados do cartão:
-[*]Cartao: {}
-[*]Bandeira: {}
-[*]Tipo: {}
-[*]Nivel: {}
-[*]Pais: {}
-[*]Banco: {}
-""".format(gg,band,tipo,nivel,pais.get("name"),banco.get("name")))
+        print(f"""[+]Consultando dados do cartão:
+[*]Cartao: {gg}
+[*]Bandeira: {band}
+[*]Tipo: {tipo}
+[*]Nivel: {nivel}
+[*]Pais: {pais.get('name')}
+[*]Banco: {banco.get('name')}
+""")
 
         pessoa=requests.request("GET","https://randomuser.me/api/?nat="+pais.get("alpha2").lower())
         pessoa=pessoa.text
@@ -116,18 +116,18 @@ try:
         for key, value in estados.items():
             estado=estado.replace(key,value)
 
-        print("""
+        print(f"""
 [+]Gerando pessoa aleatoria:
-[*]Genero: {}
-[*]Nome: {}
-[*]Nascimento: {}
-[*]CPF: {}
-[*]E-Mail: {}
-[*]Endereço: {}
-[*]CEP/ZIP: {}
-[*]Cidade: {}
-[*]Estado: {}
-""".format(genero2,nome,nascimento,cpf2,email,endereco,cep,cidade,estado))
+[*]Genero: {genero2}
+[*]Nome: {nome}
+[*]Nascimento: {nascimento}
+[*]CPF: {cpf2}
+[*]E-Mail: {email}
+[*]Endereço: {endereco}
+[*]CEP/ZIP: {cep}
+[*]Cidade: {cidade}
+[*]Estado: {estado}
+""")
 
         donate="https://doar.acnur.org/api/ACNURBR/donate.html"
         h = {
