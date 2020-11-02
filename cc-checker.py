@@ -73,7 +73,7 @@ try:
             tipo2="D"
 
         print("""
-[+]Consultando dados do cartão:
+   [+]Consultando dados do cartão:
 [*]Cartao: {}
 [*]Bandeira: {}
 [*]Tipo: {}
