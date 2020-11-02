@@ -161,23 +161,23 @@ try:
         
             #Variaveis de retorno de erro
             if R=="REFUSED_PAYMENT":
-                print("[-]Transação recusada (Possivel IP Block).")
+                print(f"{R}[-]{C}Transação recusada ({R}Possivel IP Block{C}).")
             elif R=="DATA_INVALID":
-                print("[-]Cartão invalido (DIE).")
+                print(f"{R}[-]{C}Cartão invalido ({R}DIE{C}).")
             elif R=="FAIL_UNKNOWN":
-                print("[-]Erro Desconhecido (possivel uso de cartao de Debito).")
+                print("f"{R}[-]{C}Erro Desconhecido ({R}possivel uso de cartao de Debito{C}).")
             elif R=="ERROR_NETWORK":
-                print("[-]Erro de rede.")
+                print(f"{R}[-]{C}Erro de rede.")
             elif R=="DATA_CARD_NOT_ALLOWED":
-                print("[-]Pagamento nao autorizado.")
+                print("f"{R}[-]{C}Pagamento nao autorizado.")
             elif R=="REFUSED_PROVIDER":
-                print("[-]Pagamento recusado pela {}.".format(band))
+                print("f"{R}[-]{C}Pagamento recusado pela {Y}{band}{C}.")
             elif R=="REFUSED_BANK":
-                print("[-]Recusado pelo {}.".format(banco.get("name")))
+                print(f"{R}[-]{C}Recusado pelo {Y}{banco.get("name")}{C}.")
             elif R=="DATA_MISSING":
-                print("[-]Algum dado faltando.")
+                print(f"{R}[-]{C}Algum dado faltando.")
             else:
-                print("Erro nao listado, confira: "+R.split("=")[1,2])
+                print(f"{Y}Erro nao listado, confira: {R}"+R.split("=")[1,2]+RT)
     
     #Adicionei apenas estados brasileiros e americanos, analisando a request POST, vi que enviava apenas a sigla.
     estados={
@@ -265,7 +265,7 @@ try:
         "Virgin Islands": "VI"
             }
 
-    lista=open(input("Caminho da lista: "), "r").read().splitlines()
+    lista=open(input(f"{C}Caminho da lista: "), "r").read().splitlines()
     print()
     for gg in lista:
         cc=gg.split("|")[0]
