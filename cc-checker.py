@@ -72,8 +72,8 @@ try:
         else:
             tipo2="D"
 
-        print("""
-   [+]Consultando dados do cartão:
+        print()
+        print("""[+]Consultando dados do cartão:
 [*]Cartao: {}
 [*]Bandeira: {}
 [*]Tipo: {}
