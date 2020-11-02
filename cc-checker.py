@@ -51,7 +51,7 @@ time.sleep(3); os.system('clear')
 print(f"""{B}*By PoisonBR{RT}{G}
  ██████╗ ██████╗   ██████╗██╗  ██╗███████╗ ██████╗██╗  ██╗███████╗██████╗ 
 ██╔════╝██╔════╝  ██╔════╝██║  ██║██╔════╝██╔════╝██║ ██╔╝██╔════╝██╔══██╗
-██║     ██║       ██║     ███████║█████╗  ██║     █████╔╝ █████╗  ██████╔╝
+██║     ██║  ███╗ ██║     ███████║█████╗  ██║     █████╔╝ █████╗  ██████╔╝
 ██║     ██║       ██║     ██╔══██║██╔══╝  ██║     ██╔═██╗ ██╔══╝  ██╔══██╗
 ╚██████╗╚██████╗  ╚██████╗██║  ██║███████╗╚██████╗██║  ██╗███████╗██║  ██║
  ╚═════╝ ╚═════╝   ╚═════╝╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ v 1.0{C}
@@ -71,13 +71,14 @@ try:
         else:
             tipo2="D"
             
-        print(f"""[+]Consultando dados do cartão:
-[*]Cartao: {gg}
-[*]Bandeira: {band}
-[*]Tipo: {tipo}
-[*]Nivel: {nivel}
-[*]Pais: {pais.get('name')}
-[*]Banco: {banco.get('name')}
+        print(f"""
+{G}[+]{C}Consultando dados do cartão:
+{Y}[*]{C}Cartao: {B}{gg}
+{Y}[*]{C}Bandeira: {B}{band}
+{Y}[*]{C}Tipo: {B}{tipo}
+{Y}[*]{C}Nivel: {B}{nivel}
+{Y}[*]{C}Pais: {B}{pais.get('name')}
+{Y}[*]{C}Banco: {B}{banco.get('name')}
 """)
 
         pessoa=requests.request("GET","https://randomuser.me/api/?nat="+pais.get("alpha2").lower())
@@ -117,16 +118,16 @@ try:
             estado=estado.replace(key,value)
 
         print(f"""
-[+]Gerando pessoa aleatoria:
-[*]Genero: {genero2}
-[*]Nome: {nome}
-[*]Nascimento: {nascimento}
-[*]CPF: {cpf2}
-[*]E-Mail: {email}
-[*]Endereço: {endereco}
-[*]CEP/ZIP: {cep}
-[*]Cidade: {cidade}
-[*]Estado: {estado}
+{G}[+]{C}Gerando pessoa aleatoria:
+{Y}[*]{C}Genero: {B}{genero2}
+{Y}[*]{C}Nome: {B}{nome}
+{Y}[*]{C}Nascimento: {B}{nascimento}
+{Y}[*]{C}CPF: {B}{cpf2}
+{Y}[*]{C}E-Mail: {B}{email}
+{Y}[*]{C}Endereço: {B}{endereco}
+{Y}[*]{C}CEP/ZIP: {B}{cep}
+{Y}[*]{C}Cidade: {B}{cidade}
+{Y}[*]{C}Estado: {B}{estado}
 """)
 
         donate="https://doar.acnur.org/api/ACNURBR/donate.html"
@@ -274,14 +275,14 @@ try:
         checker(cc,mes,ano,cvv)
             
 except KeyboardInterrupt:
-    print("[-]Cancelado pelo usuario!")
+    print(f"{R}[-]{C}Cancelado pelo usuario!")
     print("Saindo...")
-    exit("Ctrl+C pressionado.")
+    exit(f"{R}Ctrl+C pressionado.{RT}")
 except IOError:
-    print("[-]Lista nao encontrada ou caminho inválido.")
+    print(f"{R}[-]{C}Lista nao encontrada ou caminho inválido.")
     print("Saindo...")
-    exit("Caminho invalido.")
+    exit(f"{R}Caminho invalido.{RT}")
 except ValueError:
-    print("[-]Bin nao encontrada (erro no inicio) ou erro no gerador de pessoas. Tente novamente!")
+    print(f"{R}[-]{C}Bin nao encontrada (erro no inicio) ou erro no gerador de pessoas. Tente novamente!")
     print("Saindo...")
-    exit("Erro de BIN ou Gerador")
+    exit(f"{R}Erro de BIN ou Gerador{RT}")
