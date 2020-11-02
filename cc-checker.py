@@ -80,9 +80,7 @@ try:
 {Y}[*]{C}Pais: {B}{pais.get('name')}
 {Y}[*]{C}Banco: {B}{banco.get('name')}""")
 
-        pessoa=requests.request("GET","https://randomuser.me/api/?nat="+pais.get("alpha2").lower())
-        pessoa=pessoa.text
-        pessoa=json.loads(pessoa)
+        pessoa=requests.request("GET","https://randomuser.me/api/?nat="+pais.get("alpha2").lower()).json()
         genero=pessoa["results"][0]["gender"]
         if genero=="female":
             genero2=genero.replace("female","Mulher")
