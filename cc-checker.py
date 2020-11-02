@@ -78,8 +78,7 @@ try:
 {Y}[*]{C}Tipo: {B}{tipo}
 {Y}[*]{C}Nivel: {B}{nivel}
 {Y}[*]{C}Pais: {B}{pais.get('name')}
-{Y}[*]{C}Banco: {B}{banco.get('name')}
-""")
+{Y}[*]{C}Banco: {B}{banco.get('name')}""")
 
         pessoa=requests.request("GET","https://randomuser.me/api/?nat="+pais.get("alpha2").lower())
         pessoa=pessoa.text
@@ -266,7 +265,6 @@ try:
             }
 
     lista=open(input(f"{C}Caminho da lista: "), "r").read().splitlines()
-    print()
     for gg in lista:
         cc=gg.split("|")[0]
         mes=gg.split("|")[1]
