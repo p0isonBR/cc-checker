@@ -44,7 +44,7 @@ print(f"""{C}
      ██╔═══╝ ██║   ██║██║╚════██║██║   ██║██║╚██╗██║██╔══██╗██╔══██╗
      ██║     ╚██████╔╝██║███████║╚██████╔╝██║ ╚████║██████╔╝██║  ██║
      ╚═╝      ╚═════╝ ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚═════╝ ╚═╝  ╚═╝
-       {RT}{B}*t.me/p0isonBR*{RT}""")
+     {RT}{B}*t.me/p0isonBR*{RT}""")
 
 time.sleep(3); os.system('clear')
 
@@ -155,7 +155,7 @@ try:
         RS=requests.request("POST",donate,headers=h,data=data)
         RS=RS.url
         if RS=="https://doar.acnur.org/acnur/agradecimento.html":
-            print("[+]Pagamento autorizado! Cartão LIVE!")
+            print(f"{G}[+]{C}Pagamento autorizado! {G}Cartão LIVE!{C}")
         else:
             RS=RS.split("=")[3]
         
