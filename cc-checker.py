@@ -173,7 +173,7 @@ try:
             elif R=="REFUSED_PROVIDER":
                 print(f"{R}[-]{C}Pagamento recusado pela {Y}{band}{C}.")
             elif R=="REFUSED_BANK":
-                print(f"{R}[-]{C}Recusado pelo {Y}{banco.get("name")}{C}.")
+                print("{}[-]{}Recusado pelo {}{}{}.".format(R,C,Y,banco.get("name"),C))
             elif R=="DATA_MISSING":
                 print(f"{R}[-]{C}Algum dado faltando.")
             else:
