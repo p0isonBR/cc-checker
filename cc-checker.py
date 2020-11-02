@@ -57,6 +57,7 @@ $$ |  $$\ $$ |  $$\   $$ |  $$\ $$ |  $$ |$$   ____|$$ |      $$  _$$<  $$   ___
 \$$$$$$  |\$$$$$$  |  \$$$$$$  |$$ |  $$ |\$$$$$$$\ \$$$$$$$\ $$ | \$$\ \$$$$$$$\ $$ |      
  \______/  \______/    \______/ \__|  \__| \_______| \_______|\__|  \__| \_______|\__|      
                                                                                        v 1.0"""+C+""")
+                                                                                       
 
 try:
     def checker(cc,mes,ano,cvv):
@@ -71,16 +72,16 @@ try:
             tipo2="C"
         else:
             tipo2="D"
-
-        print()
-        print("""[+]Consultando dados do cartão:
-[*]Cartao: {}
-[*]Bandeira: {}
-[*]Tipo: {}
-[*]Nivel: {}
-[*]Pais: {}
-[*]Banco: {}
-""".format(gg,band,tipo,nivel,pais.get("name"),banco.get("name")))
+            
+        print("""
+ [+]Consultando dados do cartão:
+ [*]Cartao: {}
+ [*]Bandeira: {}
+ [*]Tipo: {}
+ [*]Nivel: {}
+ [*]Pais: {}
+ [*]Banco: {}
+ """.format(gg,band,tipo,nivel,pais.get("name"),banco.get("name")))
 
         pessoa=requests.request("GET","https://randomuser.me/api/?nat="+pais.get("alpha2").lower())
         pessoa=pessoa.text
@@ -119,16 +120,16 @@ try:
             estado=estado.replace(key,value)
 
         print("""[+]Gerando pessoa aleatoria:
-[*]Genero: {}
-[*]Nome: {}
-[*]Nascimento: {}
-[*]CPF: {}
-[*]E-Mail: {}
-[*]Endereço: {}
-[*]CEP/ZIP: {}
-[*]Cidade: {}
-[*]Estado: {}
-""".format(genero2,nome,nascimento,cpf2,email,endereco,cep,cidade,estado))
+ [*]Genero: {}
+ [*]Nome: {}
+ [*]Nascimento: {}
+ [*]CPF: {}
+ [*]E-Mail: {}
+ [*]Endereço: {}
+ [*]CEP/ZIP: {}
+ [*]Cidade: {}
+ [*]Estado: {}
+ """.format(genero2,nome,nascimento,cpf2,email,endereco,cep,cidade,estado))
 
         donate="https://doar.acnur.org/api/ACNURBR/donate.html"
         h = {
