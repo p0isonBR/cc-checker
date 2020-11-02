@@ -165,13 +165,13 @@ try:
             elif R=="DATA_INVALID":
                 print(f"{R}[-]{C}Cartão invalido ({R}DIE{C}).")
             elif R=="FAIL_UNKNOWN":
-                print("f"{R}[-]{C}Erro Desconhecido ({R}possivel uso de cartao de Debito{C}).")
+                print(f"{R}[-]{C}Erro Desconhecido ({R}possivel uso de cartao de Debito{C}).")
             elif R=="ERROR_NETWORK":
                 print(f"{R}[-]{C}Erro de rede.")
             elif R=="DATA_CARD_NOT_ALLOWED":
-                print("f"{R}[-]{C}Pagamento nao autorizado.")
+                print(f"{R}[-]{C}Pagamento nao autorizado.")
             elif R=="REFUSED_PROVIDER":
-                print("f"{R}[-]{C}Pagamento recusado pela {Y}{band}{C}.")
+                print(f"{R}[-]{C}Pagamento recusado pela {Y}{band}{C}.")
             elif R=="REFUSED_BANK":
                 print(f"{R}[-]{C}Recusado pelo {Y}{banco.get("name")}{C}.")
             elif R=="DATA_MISSING":
