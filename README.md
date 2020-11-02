@@ -15,3 +15,5 @@
 Obs.: Não esqueça de usar VPN para outros paises. Caso houver IP Block, trocar o IP BR também por VPN ou proxy.
 
 Duvida ou sugestao: https://t.me/p0isonBR
+
+#there's no knowledge that is not power.
