@@ -47,16 +47,16 @@ print(C+"                |_|"+RT+B+"*by p0isonBR"+RT)
 
 time.sleep(3); os.system('clear')
 
-print(B+"*By PoisonBR"+RT+G+"""
- $$$$$$\   $$$$$$\     $$$$$$\  $$\                           $$\                           
-$$  __$$\ $$  __$$\   $$  __$$\ $$ |                          $$ |                          
-$$ /  \__|$$ /  \__|  $$ /  \__|$$$$$$$\   $$$$$$\   $$$$$$$\ $$ |  $$\  $$$$$$\   $$$$$$\  
-$$ |      $$ |$$$$$$\ $$ |      $$  __$$\ $$  __$$\ $$  _____|$$ | $$  |$$  __$$\ $$  __$$\ 
-$$ |      $$ |\______|$$ |      $$ |  $$ |$$$$$$$$ |$$ /      $$$$$$  / $$$$$$$$ |$$ |  \__|
-$$ |  $$\ $$ |  $$\   $$ |  $$\ $$ |  $$ |$$   ____|$$ |      $$  _$$<  $$   ____|$$ |      
-\$$$$$$  |\$$$$$$  |  \$$$$$$  |$$ |  $$ |\$$$$$$$\ \$$$$$$$\ $$ | \$$\ \$$$$$$$\ $$ |      
- \______/  \______/    \______/ \__|  \__| \_______| \_______|\__|  \__| \_______|\__|      
-                                                                                       v 1.0"""+C+""")
+print(B+"""*By PoisonBR"""+RT+G+"""
+ $$$$$$\   $$$$$$\            $$$$$$\  $$\                           $$\                           
+$$  __$$\ $$  __$$\          $$  __$$\ $$ |                          $$ |                          
+$$ /  \__|$$ /  \__|        $$ /   \__|$$$$$$$\   $$$$$$\   $$$$$$$\ $$ |  $$\  $$$$$$\   $$$$$$\  
+$$ |      $$ |     $$$$$$\ $$ |       $$  __$$\ $$  __$$\ $$  _____|$$ | $$  |$$  __$$\ $$  __$$\ 
+$$ |      $$ |     \______|$$ |       $$ |  $$ |$$$$$$$$ |$$ /      $$$$$$  / $$$$$$$$ |$$ |  \__|
+$$ |  $$\ $$ |  $$\        $$ |  $$\  $$ |  $$ |$$   ____|$$ |      $$  _$$<  $$   ____|$$ |      
+\$$$$$$  |\$$$$$$  |       \$$$$$$  | $$ |  $$ |\$$$$$$$\ \$$$$$$$\ $$ | \$$\ \$$$$$$$\ $$ |      
+ \______/  \______/         \______/  \__|  \__| \_______| \_______|\__|  \__| \_______|\__|      
+                                                                                             v 1.0"""+C)
                                                                                        
 
 try:
@@ -74,14 +74,14 @@ try:
             tipo2="D"
             
         print("""
- [+]Consultando dados do cartão:
- [*]Cartao: {}
- [*]Bandeira: {}
- [*]Tipo: {}
- [*]Nivel: {}
- [*]Pais: {}
- [*]Banco: {}
- """.format(gg,band,tipo,nivel,pais.get("name"),banco.get("name")))
+[+]Consultando dados do cartão:
+[*]Cartao: {}
+[*]Bandeira: {}
+[*]Tipo: {}
+[*]Nivel: {}
+[*]Pais: {}
+[*]Banco: {}
+""".format(gg,band,tipo,nivel,pais.get("name"),banco.get("name")))
 
         pessoa=requests.request("GET","https://randomuser.me/api/?nat="+pais.get("alpha2").lower())
         pessoa=pessoa.text
@@ -119,17 +119,18 @@ try:
         for key, value in estados.items():
             estado=estado.replace(key,value)
 
-        print("""[+]Gerando pessoa aleatoria:
- [*]Genero: {}
- [*]Nome: {}
- [*]Nascimento: {}
- [*]CPF: {}
- [*]E-Mail: {}
- [*]Endereço: {}
- [*]CEP/ZIP: {}
- [*]Cidade: {}
- [*]Estado: {}
- """.format(genero2,nome,nascimento,cpf2,email,endereco,cep,cidade,estado))
+        print("""
+[+]Gerando pessoa aleatoria:
+[*]Genero: {}
+[*]Nome: {}
+[*]Nascimento: {}
+[*]CPF: {}
+[*]E-Mail: {}
+[*]Endereço: {}
+[*]CEP/ZIP: {}
+[*]Cidade: {}
+[*]Estado: {}
+""".format(genero2,nome,nascimento,cpf2,email,endereco,cep,cidade,estado))
 
         donate="https://doar.acnur.org/api/ACNURBR/donate.html"
         h = {
@@ -286,4 +287,3 @@ except ValueError:
     print("[-]Bin nao encontrada (erro no inicio) ou erro no gerador de pessoas. Tente novamente!")
     print("Saindo...")
     exit("Erro de BIN ou Gerador")
-
