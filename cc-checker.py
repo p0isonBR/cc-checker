@@ -97,8 +97,7 @@ try:
             m=nascimento.split("-")[1]
             a=nascimento.split("-")[0]
             nascimento=d+"/"+m+"/"+a
-        cpf=requests.request("GET", "http://geradorapp.com/api/v1/cpf/generate?token=f01e0024a26baef3cc53a2ac208dd141")
-        cpf=cpf.json()
+        cpf=requests.request("GET", "http://geradorapp.com/api/v1/cpf/generate?token=f01e0024a26baef3cc53a2ac208dd141").json()
         cpf2=cpf["data"]["number_formatted"]
         cpf=cpf["data"]["number"]
         email=pnome.replace(" ",".")+"."+sobrenome.replace(" ",".")+"@outlook.com"
