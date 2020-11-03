@@ -173,7 +173,7 @@ try:
             elif RS=="DATA_MISSING":
                 print(f"{R}[-]{C}Algum dado faltando.")
             else:
-                print(f"{Y}Erro nao listado, confira: {R}"+RS.split("=")[1,2]+RT)
+                print(f"{Y}Erro nao listado, confira: {R}{RS}{RT}")
     
     #Adicionei apenas estados brasileiros e americanos, analisando a request POST, vi que enviava apenas a sigla.
     estados={
